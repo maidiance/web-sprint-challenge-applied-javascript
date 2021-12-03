@@ -60,7 +60,16 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
+DOM stands for Document Object Model, and contains the elements of an HTML document, starting with the Document object itself. Through it, we can access elements such as headers, buttons, and the content of the elements.
+
 2. What is an event?
+A plethora of things that can happen to HTML elements; they can be reacted to with event listeners. An example might be a button being clicked, or a key being pressed.
+
 3. What is an event listener?
+A function that happens when the event is triggered; for example if the event was a button being clicked, it might show dog pictures retrieved from an API.
+
 4. Why would we convert a NodeList into an Array?
+Array methods such as .map(), .reduce(), .filter() are quite powerful and only work on arrays, not on NodeLists.
+
 5. What is a component?
+As a concept, a component is simply a part of a bigger whole - RAM as part of a PC or tomatoes as part of a soup. We use components as functions - creating DOM elements, perhaps adding classes and content, then returning the elements - usually adjusting such things as textContent based on parameter attributes. This keeps our code DRY and easy to update.
