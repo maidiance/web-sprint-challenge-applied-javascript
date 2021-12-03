@@ -45,6 +45,11 @@ const Card = (article) => {
   imgDiv.appendChild(imgElem);
   author.appendChild(authorElem);
 
+  // add event listener
+  cardElem.addEventListener('click', () => {
+    console.log(headline.textContent);
+  });
+
   // return
   return cardElem;
 }
@@ -61,18 +66,21 @@ const cardAppender = (selector) => {
   const entryPoint = document.querySelector(selector);
   axios.get('http://localhost:5000/api/articles')
     .then(response => {
-      console.log(response);
+      // console.log(response);
       const articles = response.data.articles;
+      // loop through each article type
       for (const item in articles){
-        // console.log(`${item}`);
+        // loop through each article in the article type
         for (let i = 0; i < articles[item].length; i++){
-          // console.log(articles[item]);
+          // set the article obj attributes
           const articleElem = {
             headline: articles[item][i].headline,
             authorPhoto: articles[item][i].authorPhoto,
             authorName: articles[item][i].authorName,
           };
+          // create the card
           const cardElem = Card(articleElem);
+          // append the card
           entryPoint.appendChild(cardElem);
         }
       }
